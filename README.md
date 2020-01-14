@@ -1,4 +1,4 @@
-# anderson-bern-website
+# vue-boilerplate
 
 ## Project setup
 ```

@@ -1,0 +1,119 @@
+// Mixins
+
+@mixin calc-difference-width($percentage, $number) {
+  /* Firefox */
+  width: -moz-calc(#{$percentage} - #{$number});
+  /* WebKit */
+  width: -webkit-calc(#{$percentage} - #{$number});
+  /* Opera */
+  width: -o-calc(#{$percentage} - #{$number});
+  /* Standard */
+  width: calc(#{$percentage} - #{$number});
+}
+
+@mixin calc-difference-height($percentage, $number) {
+  /* Firefox */
+  height: -moz-calc(#{$percentage} - #{$number});
+  /* WebKit */
+  height: -webkit-calc(#{$percentage} - #{$number});
+  /* Opera */
+  height: -o-calc(#{$percentage} - #{$number});
+  /* Standard */
+  height: calc(#{$percentage} - #{$number});
+}
+
+@mixin calc-sum-width($percentage, $number) {
+  /* Firefox */
+  width: -moz-calc(#{$percentage} + #{$number});
+  /* WebKit */
+  width: -webkit-calc(#{$percentage} + #{$number});
+  /* Opera */
+  width: -o-calc(#{$percentage} + #{$number});
+  /* Standard */
+  width: calc(#{$percentage} + #{$number});
+}
+
+@mixin calc-sum-height($percentage, $number) {
+  /* Firefox */
+  height: -moz-calc(#{$percentage} + #{$number});
+  /* WebKit */
+  height: -webkit-calc(#{$percentage} + #{$number});
+  /* Opera */
+  height: -o-calc(#{$percentage} + #{$number});
+  /* Standard */
+  height: calc(#{$percentage} + #{$number});
+}
+
+@mixin flex-display() {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-box(
+  $flex-direction,
+  $justify-content,
+  $align-content,
+  $align-items
+) {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: #{$flex-direction};
+  -ms-flex-direction: #{$flex-direction};
+  flex-direction: #{$flex-direction};
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: #{$justify-content};
+  -ms-flex-pack: start;
+  justify-content: #{$justify-content};
+  -webkit-align-content: #{$align-content};
+  -ms-flex-line-pack: justify;
+  align-content: #{$align-content};
+  -webkit-align-items: #{$align-items};
+  -ms-flex-align: #{$align-items};
+  align-items: #{$align-items};
+}
+
+@mixin cover-image($url) {
+  background-image: url(#{$url});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin transition($property, $duration, $type) {
+  transition: #{$property} #{$duration} #{$type};
+  -webkit-transition: #{$property} #{$duration} #{$type};
+  -moz-transition: #{$property} #{$duration} #{$type};
+  -o-transition: #{$property} #{$duration} #{$type};
+}
+
+@mixin is-mobile {
+  // Extra small devices (portrait phones, less than 767px)
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin is-tablet {
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin is-desktop {
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin is-large-desktop {
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

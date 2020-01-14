@@ -1,0 +1,10 @@
+$primary: rgb(91, 232, 255);
+$primary-invert: findColorInvert($primary);
+$secondary: #040424;
+$secondary-invert: findColorInvert($secondary);
+$accent: #ffb400;
+$accent-hover: #eca701;
+$dark-bg-color: $secondary;
+$light-gray: #a2a1a1;
+$off-white: #eee;
+$gray: #e7e7e7;
